@@ -1,5 +1,5 @@
 {
-  "name": "Fullstack-Blog-App2",
+  "name": "Fullstack-Blog-App",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/ASmellyCat/Fullstack-Blog-App.git",
@@ -8,6 +8,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2",
+    "mongoose": "^7.6.3",
     "react-router-dom": "^6.17.0"
   }
 }
