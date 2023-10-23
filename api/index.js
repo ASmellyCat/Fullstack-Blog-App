@@ -6,7 +6,6 @@ const app = express()
 const User = require('./models/User')
 
 const salt = bcrypt.genSaltSync(10);
-const secret = 'asdfe45we45w345wegw345werjktjwertkj';
 app.use(cors())
 app.use(express.json());
 
@@ -23,6 +22,14 @@ app.post('/register', async(req, res) => {
         res.status(400).json(e)
     }
 })
+
+app.post('/login', async (req,res) => {
+    const {username,password} = req.body
+    const userDoc = await User.findOne({username})
+    const passOk = bcrypt.compareSync(password, userDoc.password)
+    res.json(passOk)
+})
+
 app.listen(4000)
 
 //nnuAzhCtReOR5KMe
